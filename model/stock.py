@@ -1,3 +1,5 @@
+import math
+
 class Stock:
     # constructor
     def __init__(
@@ -35,6 +37,8 @@ class Stock:
         return self.__general_rate
     def get_dividend(self):
         return self.__dividend
+    def get_total_value(self):
+        return self.__num_shares * self.__price
     def set_name(self, name):
         self.__name = name
     def set_num_shares(self, num_shares):
@@ -54,3 +58,16 @@ class Stock:
     def set_general_rate(self, general_rate):
         self.__general_rate = general_rate
 
+    # print
+    def print(self):
+        print('----------{}----------'.format(self.__name))
+        print('Total Value: ${0:.2f}'.format(self.get_total_value()))
+        print('Number of shares: '.format(self.__name))
+        print('Price: ${0:.2f}'.format(self.__price))
+        print('Daily Rate: {0:.2f}'.format(self.__daily_rate))
+        print('Weekly Rate: {0:.2f}'.format(self.__weekly_rate))
+        print('Monthly Rate: {0:.2f}'.format(self.__monthly_rate))
+        print('Three Month Rate: {0:.2f}'.format(self.__three_month_rate))
+        print('Yearly Rate: {0:.2f}'.format(self.__yearly_rate))
+        print('General Rate: {0:.2f}'.format(self.__general_rate))
+        print('Dividend: {0:.2f}'.format(self.__dividend))
